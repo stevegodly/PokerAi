@@ -16,8 +16,11 @@ public class GameManager : MonoBehaviour
     int moneyPool=0;
     int curr_raise=10;
     string action;
+    int state=0;
+    bool turn=false;
 
     private HashSet<int> previouslyDiscardedIndices = new HashSet<int>();
+
 
 
     List<int> discardedIndices=new List<int>();
@@ -80,10 +83,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject CardPrefab;
     string[] ranks = {"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
     string[] suits = {"s","h","d","c"};
+
+    bool[] turns={false,true};
     
     void Start()
     {
         PokerAI.LoadStrategy();
+        turn=turns[UnityEngine.Random.Range(0,turns.Length)];
         InitMoney();
         StartCoroutine(TimebtwStates(GameStates.RoundStart,4f));
         
@@ -294,6 +300,7 @@ public class GameManager : MonoBehaviour
             round=0;
             
             SetInfoMessage("Round Start");
+            Debug.Log("In Round Start State, turn :"+turn);
             foreach (var card in playerCards){
                 Destroy(card);
             }
@@ -318,6 +325,7 @@ public class GameManager : MonoBehaviour
             SetInfoMessage("Ante placed!");
             curr_raise=0;
             action="";
+            state=0;
             StartCoroutine(TimebtwStates(GameStates.Betting_Round_1,2f));
         }
         else if(gameState==GameStates.DealCards)
@@ -328,10 +336,10 @@ public class GameManager : MonoBehaviour
             StartCoroutine(DealTheCards());
         }
         else if(gameState==GameStates.Betting_Round_1)
-        {
-            Debug.Log("Betting Round 1 State");
-            dealButton.interactable=true;
-            if(round==0 && (aiMoney<=0 || playerMoney<=0)) {
+        {   
+            Debug.Log("Betting Round 1 State, turn :"+turn);
+            action="";
+            if(aiMoney<=0 || playerMoney<=0) {
                 if(aiMoney<=0) SetInfoMessage("AI has no money to bet!, Hence Round ends"); 
                 else if(playerMoney<=0) SetInfoMessage("You have no money to bet!, Hence Round ends");
                 else SetInfoMessage("No money to bet!");
@@ -339,33 +347,31 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(TimebtwStates(GameStates.Check_Winner,3f));
                 return;
             }
-            if(round==0) callButton.GetComponentInChildren<TMP_Text>().text="CHECK";
-            dealButton.GetComponentInChildren<TMP_Text>().text="DEAL";
-            
-            if(round==1) {
+            if(state==2 && round==0) {
+                StartCoroutine(TimebtwStates(GameStates.Discard,1f));
+                return;
+            }
+            if(state==2 && round==1) {
+                DisableButtons();
+                StartCoroutine(TimebtwStates(GameStates.Check_Winner,1f));
+                return;
+            }    
+            if(turn) {
                 DisableButtons();
                 AiDecision(aiHand);
                 Debug.Log("AI Decision made");
-                
-                
-                if(action!="fold") StartCoroutine(TimebtwStates(GameStates.Discard,2.5f));
-            }
-            if(round==2 && (aiMoney<=0 || playerMoney<=0)) {
-                if(aiMoney<=0) SetInfoMessage("AI has no money to bet!, Hence Round ends");
-                else if(playerMoney<=0) SetInfoMessage("You have no money to bet!, Hence Round ends");
-                else SetInfoMessage("No money to bet!");
-                DisableButtons();
-                StartCoroutine(TimebtwStates(GameStates.Check_Winner,3f));
                 return;
             }
-            if(round==2) {
-                DisableButtons();
-                AiDecision(aiHand);
-                callButton.GetComponentInChildren<TMP_Text>().text="CALL";
-            }    
-            if(playerMoney>curr_raise && action!="fold") raiseButton.interactable=true;
-            if(action!="fold") callButton.interactable=true;
-            if(action!="fold") foldButton.interactable=true;
+            if(!turn){
+                if(state==0) callButton.GetComponentInChildren<TMP_Text>().text="CHECK";
+                else callButton.GetComponentInChildren<TMP_Text>().text="CALL";
+                dealButton.GetComponentInChildren<TMP_Text>().text="DEAL";
+                if(playerMoney>curr_raise && action!="fold") raiseButton.interactable=true;
+                if(action!="fold") callButton.interactable=true;
+                if(action!="fold") foldButton.interactable=true;
+               return;
+            }
+            
         }
         else if(gameState==GameStates.Discard)
         {       
@@ -411,14 +417,14 @@ public class GameManager : MonoBehaviour
 
             if (playerRank > aiRank || (playerRank == aiRank && CompareTiebreakers(playerTiebreakers, aiTiebreakers) > 0))
             {
-                
+                turn=false;
                 UpdatePlayerMoney(moneyPool);
                 SetInfoMessage("Player wins the round!");
 
             }
             else if (playerRank < aiRank || (playerRank == aiRank && CompareTiebreakers(playerTiebreakers, aiTiebreakers) < 0))
             {
-                
+                turn=true;
                 UpdateAiMoney(moneyPool);
                 SetInfoMessage("AI wins the round!");
             }
@@ -471,7 +477,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(time);
         ChangeGameState(gameState);
     }
-
+    
     IEnumerator WaitForTouchThenContinue()
     {
         SetInfoMessage("Ai has folded, Tap to continue...");
@@ -508,33 +514,26 @@ public class GameManager : MonoBehaviour
     }
 
     public void DealButton(){
-        if(gameState==GameStates.Betting_Round_1 && round==0)
+        if(gameState==GameStates.Betting_Round_1)
         {
-            round++;
             DisableButtons();
             curr_raise=playerBetMoney;
             moneyPool+=playerBetMoney;
             UpdateMoneyPool();
-            Debug.Log("Before round :"+round);
-            if(round==1) {
-                StartCoroutine(TimebtwStates(GameStates.Betting_Round_1,2f));
-            }
+            
+            state++;
+            turn=!turn;
+            Debug.Log("round :"+round+" state :"+state+" turn :"+turn);
+            StartCoroutine(TimebtwStates(GameStates.Betting_Round_1,2f));
+        
         }
         else if(gameState==GameStates.Discard)
         {
             SetInfoMessage("2nd Betting Round");
             DisableButtons();
             round++;
-            StartCoroutine(TimebtwStates(GameStates.Betting_Round_1,3.25f));
-        }
-        else if(round==2) {
-            round++;
-            DisableButtons();
-            curr_raise=playerBetMoney;
-            moneyPool+=playerBetMoney;
-            UpdateMoneyPool();
-            ChangeGameState(GameStates.Check_Winner);
-        
+            state=0;
+            StartCoroutine(TimebtwStates(GameStates.Betting_Round_1,2.25f));
         }
         else if(gameState==GameStates.NextRound)
         {
@@ -551,6 +550,7 @@ public class GameManager : MonoBehaviour
         moneyPool=0;
         UpdateMoneyPool();
         SetInfoMessage("You folded!"); 
+        turn=!turn;
         StartCoroutine(TimebtwStates(GameStates.NextRound,0.5f));
         
     }
@@ -565,7 +565,7 @@ public class GameManager : MonoBehaviour
 
     public void CallButton()
     {
-        if(round==0) {dealButton.interactable=true;return;}
+        if(state==0) {dealButton.interactable=true;return;}
         if(gameState==GameStates.Discard) {
             PlayerDiscardAndDraw();
             return;
@@ -589,7 +589,9 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("entered AI Decision");
         float prob=0;
-        action = PokerAI.DecideAction(hand,out prob);
+        int pot=2;
+        if(round==0 && state==0) pot=1;
+        action = PokerAI.DecideAction(hand,out prob,pot);
         if(round==2) curr_raise=0;
         if(action=="bet" && aiMoney<=curr_raise) action="call";
         if(action=="bet" && aiMoney<5) action="call";
@@ -608,8 +610,11 @@ public class GameManager : MonoBehaviour
         }
         else if(action=="call")
         {
-            if(round==2){SetInfoMessage("AI has decided to check!");
+            if(state==0){SetInfoMessage("AI has decided to check!");
                 curr_raise=0;
+                turn=!turn;
+                state++;
+                StartCoroutine(TimebtwStates(GameStates.Betting_Round_1,2f));
                 return;
             }
             
@@ -641,7 +646,11 @@ public class GameManager : MonoBehaviour
             UpdateMoneyPool();
             curr_raise=betAmount;
         }
+        turn=!turn;
+        state++;
+        Debug.Log("Aidecision round :"+round+" state :"+state+" turn :"+turn);
         UpdatePlayerBet(-playerBetMoney);
+        if(action!="fold") StartCoroutine(TimebtwStates(GameStates.Betting_Round_1,2f));
     }
 
     void PlayerDiscardAndDraw()

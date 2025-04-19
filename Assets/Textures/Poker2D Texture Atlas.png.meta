@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: e6537ecf239b0254e982a6a2a84f9a8d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -719405030364684349
+    second: Poker2D Texture Atlas_0
+  - first:
+      213: 3122445536421434511
+    second: Poker2D Texture Atlas_1
+  - first:
+      213: -3317543444976401922
+    second: Poker2D Texture Atlas_2
+  - first:
+      213: -161393878713002665
+    second: Poker2D Texture Atlas_3
+  - first:
+      213: -1489878441684491256
+    second: Poker2D Texture Atlas_4
+  - first:
+      213: -6556412866023398985
+    second: Poker2D Texture Atlas_5
+  - first:
+      213: -2711289044930339319
+    second: Poker2D Texture Atlas_6
+  - first:
+      213: 6443909022445643136
+    second: Poker2D Texture Atlas_7
+  - first:
+      213: 3909937006450501400
+    second: Poker2D Texture Atlas_8
+  - first:
+      213: 5452765653771847293
+    second: Poker2D Texture Atlas_9
+  - first:
+      213: 3395211785539729461
+    second: Poker2D Texture Atlas_10
+  - first:
+      213: -7392927353578751867
+    second: Poker2D Texture Atlas_11
+  - first:
+      213: -4614440748355258623
+    second: Poker2D Texture Atlas_12
+  - first:
+      213: 4122955604739072928
+    second: Poker2D Texture Atlas_13
+  - first:
+      213: -2713868504429568861
+    second: Poker2D Texture Atlas_14
+  - first:
+      213: 4701943117920129150
+    second: Poker2D Texture Atlas_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Poker2D Texture Atlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 92
+        width: 908
+        height: 908
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cfdb7bbfe82406f0800000000000000
+      internalID: -719405030364684349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poker2D Texture Atlas_1
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 311
+        width: 429
+        height: 686
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8457e40ca7255b20800000000000000
+      internalID: 3122445536421434511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poker2D Texture Atlas_2
+      rect:
+        serializedVersion: 2
+        x: 1421
+        y: 578
+        width: 419
+        height: 419
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef1814b50d7b5f1d0800000000000000
+      internalID: -3317543444976401922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poker2D Texture Atlas_3
+      rect:
+        serializedVersion: 2
+        x: 1951
+        y: 438
+        width: 520
+        height: 521
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75593665f1d92cdf0800000000000000
+      internalID: -161393878713002665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poker2D Texture Atlas_4
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 419
+        width: 121
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 51, y: 51, z: 52, w: 50}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80422e47373e25be0800000000000000
+      internalID: -1489878441684491256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poker2D Texture Atlas_5
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 419
+        width: 121
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b1efd75c31f205a0800000000000000
+      internalID: -6556412866023398985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poker2D Texture Atlas_6
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 419
+        width: 119
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 28, y: 34, z: 29, w: 28}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90ed4898af09f5ad0800000000000000
+      internalID: -2711289044930339319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poker2D Texture Atlas_7
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 92
+        width: 475
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 085aec75d1d5d6950800000000000000
+      internalID: 6443909022445643136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poker2D Texture Atlas_8
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 175
+        width: 171
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 817e2abddf2e24630800000000000000
+      internalID: 3909937006450501400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poker2D Texture Atlas_9
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 175
+        width: 171
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d76858cd87d1cab40800000000000000
+      internalID: 5452765653771847293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poker2D Texture Atlas_10
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 175
+        width: 98
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 538b05e51273e1f20800000000000000
+      internalID: 3395211785539729461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poker2D Texture Atlas_11
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 175
+        width: 165
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5887ba7cdbb076990800000000000000
+      internalID: -7392927353578751867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poker2D Texture Atlas_12
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 0
+        width: 171
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1077235769636ffb0800000000000000
+      internalID: -4614440748355258623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poker2D Texture Atlas_13
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 0
+        width: 171
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a3ad25374ea73930800000000000000
+      internalID: 4122955604739072928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poker2D Texture Atlas_14
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 0
+        width: 98
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3acda5259f6665ad0800000000000000
+      internalID: -2713868504429568861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poker2D Texture Atlas_15
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 0
+        width: 165
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e70d8b19a58a04140800000000000000
+      internalID: 4701943117920129150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 30a444c62cdec924f81059290a6a5804
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Poker2D Texture Atlas_0: -719405030364684349
+      Poker2D Texture Atlas_1: 3122445536421434511
+      Poker2D Texture Atlas_10: 3395211785539729461
+      Poker2D Texture Atlas_11: -7392927353578751867
+      Poker2D Texture Atlas_12: -4614440748355258623
+      Poker2D Texture Atlas_13: 4122955604739072928
+      Poker2D Texture Atlas_14: -2713868504429568861
+      Poker2D Texture Atlas_15: 4701943117920129150
+      Poker2D Texture Atlas_2: -3317543444976401922
+      Poker2D Texture Atlas_3: -161393878713002665
+      Poker2D Texture Atlas_4: -1489878441684491256
+      Poker2D Texture Atlas_5: -6556412866023398985
+      Poker2D Texture Atlas_6: -2711289044930339319
+      Poker2D Texture Atlas_7: 6443909022445643136
+      Poker2D Texture Atlas_8: 3909937006450501400
+      Poker2D Texture Atlas_9: 5452765653771847293
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
